@@ -149,7 +149,7 @@ a:hover { color: var(--gules); }
 /* the photograph, on its own layer so it can drift and zoom (Ken Burns) */
 .hero::before {
   content: ""; position: absolute; inset: 0; z-index: 0;
-  background: url("../images/web/college-house.jpg") center 42% / cover no-repeat;
+  background: url("../images/web/falmer-house-1967.jpg") center 40% / cover no-repeat;
   transform-origin: 62% 42%;
   animation: kenburns 34s ease-in-out infinite alternate;
   will-change: transform;
