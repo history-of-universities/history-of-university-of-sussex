@@ -7,9 +7,9 @@
   <meta name="description" content="The coat of arms of the University of Sussex, granted 1962: argent, on a chevron per pale azure and gules six martlets or, between in chief two Saxon crowns and in base a dolphin naiant sable.">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <meta name="theme-color" content="#0a3d91">
-  <link rel="stylesheet" href="assets/css/site.css?v=2">
-  <script src="assets/nav.js?v=2" defer></script>
-  <script src="assets/lightbox.js?v=2" defer></script>
+  <link rel="stylesheet" href="assets/css/site.css?v=3">
+  <script src="assets/nav.js?v=3" defer></script>
+  <script src="assets/lightbox.js?v=3" defer></script>
 </head>
 <body>
 
@@ -32,15 +32,21 @@
       </a>
       <button class="nav-toggle" aria-label="Open menu" aria-expanded="false"><span class="bars" aria-hidden="true">&#9776;</span>&nbsp;Menu</button>
       <nav class="site-nav" id="site-nav">
-        <a class="nav-top" href="./">Home</a>
-        <a class="nav-top" href="founding.html">Founding</a>
-        <a class="nav-top" href="concept.html">Concept</a>
-        <a class="nav-top" href="campus.html">Campus</a>
-        <a class="nav-top" href="timeline.html">Timeline</a>
-        <a class="nav-top" href="people.html">People</a>
-        <a class="nav-top" href="arms.html">The Arms</a>
-        <a class="nav-top" href="bibliography.html">Sources</a>
-        <a class="nav-top" href="about.html">About</a>
+        <a class="nav-top nav-direct" href="./">Home</a>
+        <div class="nav-group">
+          <button class="nav-top" type="button" aria-expanded="false">Sussex <span class="caret">&#9662;</span></button>
+          <div class="nav-menu">
+            <a href="founding.html">Founding</a>
+            <a href="concept.html">The Concept</a>
+            <a href="early-history.html">Early History</a>
+            <a href="campus.html">Campus</a>
+            <a href="people.html">People</a>
+            <a href="arms.html">The Arms</a>
+          </div>
+        </div>
+        <a class="nav-top nav-direct" href="timeline.html">Timeline</a>
+        <a class="nav-top nav-direct" href="bibliography.html">Sources</a>
+        <a class="nav-top nav-direct" href="about.html">About</a>
       </nav>
     </div>
   </header>

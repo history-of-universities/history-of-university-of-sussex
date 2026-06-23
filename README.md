@@ -18,12 +18,17 @@ Plain HTML and CSS, one small vanilla-JS nav script, no framework, no build step
 | Home | `index.html` |
 | The Founding (1961) | `founding.html` |
 | The Concept of the University | `concept.html` |
+| Early History (1961–68) | `early-history.html` |
 | The Campus (Falmer) | `campus.html` |
-| Timeline | `timeline.html` |
 | People | `people.html` |
 | The Arms (1962) | `arms.html` |
+| Timeline | `timeline.html` |
 | Sources | `bibliography.html` |
 | About | `about.html` |
+
+The Founding, Concept, Early History, Campus, People, and Arms pages are
+grouped under a **Sussex** dropdown in the navigation (`assets/nav.js` handles
+the dropdown behaviour).
 
 Shared styling lives in `assets/css/site.css`; navigation in `assets/nav.js`;
 the click-to-zoom image lightbox in `assets/lightbox.js`. The stylesheet and
@@ -31,9 +36,9 @@ scripts are linked with a cache-buster (`?v=N`); bump `N` when they change.
 
 ## Images
 
-Optimised, web-sized images live in `assets/images/web/` and are the only
-images committed to the repo. Source originals (large TIFF/PNG/JPEG) stay in
-`assets/images/` and are git-ignored. To add an image, optimise it into
+Optimised, web-sized images live in `assets/images/web/` (48 images) and are the
+only images committed to the repo. Source originals are **not** kept in the repo
+(they were moved out after optimisation). To add an image, optimise it into
 `assets/images/web/` (e.g. with `sips -s format jpeg -Z 1800 src --out web/name.jpg`)
 and reference it from a figure:
 
