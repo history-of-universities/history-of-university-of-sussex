@@ -7,7 +7,7 @@ of the plate-glass universities of the 1960s — from its 1961 Royal Charter and
 Basil Spence's Falmer campus to the present day.
 
 Part of the [History of Universities](https://github.com/history-of-universities)
-project. **Not** an official publication of the University of Sussex (yet!).
+project.
 
 ## The site
 
