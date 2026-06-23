@@ -136,30 +136,57 @@ a:hover { color: var(--gules); }
   .site-nav > .nav-group:last-of-type .nav-menu { left: auto; right: 0; }
 }
 
-/* ---------- hero: a plate-glass curtain wall ---------- */
+/* ---------- hero: a 1964 photograph behind a plate-glass wash ---------- */
 .hero {
   position: relative; min-height: 78vh; display: flex; align-items: center;
   overflow: hidden; border-bottom: 1px solid var(--line-soft);
+  background: #d8d6cd url("../images/web/hero-sussex-mind-1964.jpg") center 28% / cover no-repeat;
 }
-/* the glass facade: tall panes separated by thin azure mullions, with a
-   diagonal daylight reflection sliding across them */
+/* a light argent wash, heavier on the left so the headline stays readable,
+   plus the diagonal daylight streak of glass */
 .hero::before {
   content: ""; position: absolute; inset: 0; z-index: 0;
   background:
-    /* sky reflected in the glass */
-    linear-gradient(160deg, rgba(10,61,145,0.10) 0%, rgba(255,255,255,0.0) 42%),
+    linear-gradient(102deg, rgba(243,241,234,0.95) 0%, rgba(243,241,234,0.82) 34%, rgba(243,241,234,0.42) 66%, rgba(10,61,145,0.16) 100%),
     /* the diagonal light streak */
-    linear-gradient(118deg, transparent 38%, rgba(255,255,255,0.55) 47%, rgba(255,255,255,0.0) 56%),
-    /* horizontal transoms */
-    repeating-linear-gradient(to bottom, transparent 0 7.5rem, var(--line-soft) 7.5rem 7.55rem),
-    /* vertical mullions — the plate-glass rhythm */
-    repeating-linear-gradient(to right, rgba(255,255,255,0.0) 0 6.5rem, var(--line) 6.5rem 6.56rem),
-    linear-gradient(to bottom, rgba(255,255,255,0.5), rgba(243,241,234,0.2));
+    linear-gradient(118deg, transparent 40%, rgba(255,255,255,0.35) 48%, rgba(255,255,255,0.0) 57%);
 }
+/* faint plate-glass mullions over the whole thing */
 .hero::after {
   content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
-  background: radial-gradient(ellipse 80% 70% at 28% 50%, rgba(243,241,234,0.85) 0%, rgba(243,241,234,0.0) 70%);
+  background:
+    repeating-linear-gradient(to bottom, transparent 0 7.5rem, var(--line-soft) 7.5rem 7.55rem),
+    repeating-linear-gradient(to right, rgba(255,255,255,0.0) 0 6.5rem, var(--line-soft) 6.5rem 6.56rem);
 }
+
+/* ---------- figures: right-aligned, text flows around, click to zoom ---------- */
+figure.fig { margin: 0.2rem 0 1.1rem; }
+figure.fig img { display: block; width: 100%; height: auto; border-radius: 4px; border: 1px solid var(--line-soft); box-shadow: var(--shadow); cursor: zoom-in; transition: box-shadow 0.2s ease, transform 0.2s ease; background: #fff; }
+figure.fig img:hover { box-shadow: var(--shadow-lift); }
+figure.fig figcaption { font-family: var(--sans); font-size: 0.68rem; line-height: 1.45; color: var(--ink-dim); margin-top: 0.5rem; max-width: 42ch; }
+figure.fig figcaption b { color: var(--ink); font-weight: 700; }
+figure.fig-right { float: right; clear: right; width: min(370px, 46%); margin: 0.3rem 0 1rem 1.8rem; }
+figure.fig-left  { float: left;  clear: left;  width: min(370px, 46%); margin: 0.3rem 1.8rem 1rem 0; }
+figure.fig-wide  { width: 100%; margin: 1.6rem 0 1.2rem; }
+figure.fig-wide figcaption { max-width: 70ch; }
+section.block { overflow: hidden; }          /* contain floated figures per section */
+@media (max-width: 620px) {
+  figure.fig-right, figure.fig-left { float: none; width: 100%; margin: 1.2rem 0; }
+}
+
+/* ---------- lightbox modal ---------- */
+.lb-overlay {
+  position: fixed; inset: 0; z-index: 10000; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 1rem; padding: 4vh 4vw;
+  background: rgba(12, 18, 34, 0.92); backdrop-filter: blur(4px);
+  opacity: 0; visibility: hidden; transition: opacity 0.22s ease, visibility 0.22s ease;
+}
+.lb-overlay.open { opacity: 1; visibility: visible; }
+.lb-overlay img { max-width: 94vw; max-height: 82vh; width: auto; height: auto; border-radius: 4px; box-shadow: 0 24px 70px rgba(0,0,0,0.6); cursor: zoom-out; }
+.lb-overlay .lb-cap { font-family: var(--sans); font-size: 0.8rem; color: #e7eaf0; max-width: 70ch; text-align: center; line-height: 1.5; }
+.lb-overlay .lb-cap b { color: #fff; }
+.lb-close { position: fixed; top: 1.1rem; right: 1.3rem; width: 2.4rem; height: 2.4rem; border-radius: 50%; border: 1px solid rgba(255,255,255,0.4); background: rgba(0,0,0,0.3); color: #fff; font-size: 1.3rem; line-height: 1; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+.lb-close:hover { background: rgba(255,255,255,0.15); }
 .hero-inner { position: relative; z-index: 2; padding: 8vh 0; }
 .boot { font-family: var(--sans); font-size: 0.74rem; letter-spacing: 3px; color: var(--azure); text-transform: uppercase; margin-bottom: 1.4rem; }
 

@@ -7,7 +7,7 @@ of the plate-glass universities of the 1960s — from its 1961 Royal Charter and
 Basil Spence's Falmer campus to the present day.
 
 Part of the [History of Universities](https://github.com/history-of-universities)
-project. **Not** an official publication of the University of Sussex.
+project. **Not** an official publication of the University of Sussex (yet!).
 
 ## The site
 
@@ -17,6 +17,7 @@ Plain HTML and CSS, one small vanilla-JS nav script, no framework, no build step
 |------|------|
 | Home | `index.html` |
 | The Founding (1961) | `founding.html` |
+| The Concept of the University | `concept.html` |
 | The Campus (Falmer) | `campus.html` |
 | Timeline | `timeline.html` |
 | People | `people.html` |
@@ -24,9 +25,27 @@ Plain HTML and CSS, one small vanilla-JS nav script, no framework, no build step
 | Sources | `bibliography.html` |
 | About | `about.html` |
 
-Shared styling lives in `assets/css/site.css`; navigation in `assets/nav.js`.
-The stylesheet is linked with a cache-buster (`assets/css/site.css?v=N`); bump
-`N` when the CSS changes.
+Shared styling lives in `assets/css/site.css`; navigation in `assets/nav.js`;
+the click-to-zoom image lightbox in `assets/lightbox.js`. The stylesheet and
+scripts are linked with a cache-buster (`?v=N`); bump `N` when they change.
+
+## Images
+
+Optimised, web-sized images live in `assets/images/web/` and are the only
+images committed to the repo. Source originals (large TIFF/PNG/JPEG) stay in
+`assets/images/` and are git-ignored. To add an image, optimise it into
+`assets/images/web/` (e.g. with `sips -s format jpeg -Z 1800 src --out web/name.jpg`)
+and reference it from a figure:
+
+```html
+<figure class="fig fig-right">   <!-- or fig-left / fig-wide -->
+  <img src="assets/images/web/name.jpg" alt="…">
+  <figcaption><b>Title.</b> Caption.</figcaption>
+</figure>
+```
+
+Figures float and text wraps around them; clicking opens the image full-size in
+a modal, with the caption. This is the standard image pattern for the site.
 
 ## Branding
 
