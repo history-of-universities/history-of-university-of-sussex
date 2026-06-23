@@ -212,13 +212,13 @@ section.block { overflow: hidden; }          /* contain floated figures per sect
 
 /* the hero title is set as Perpetua outlines (assets/brand/), so it needs no web font.
    Each SVG carries the font's ascender/descender space, so a negative gap tightens the lines. */
-.hero h1 { margin: 0; display: flex; flex-direction: column; align-items: flex-start; }
-.hero h1 .ht-line { display: block; width: auto; height: clamp(2.5rem, 8.6vw, 5.4rem); }
-.hero h1 .ht-line + .ht-line { margin-top: -0.22em; }
+.hero h1 { margin: 0 0 0.1em; display: flex; flex-direction: column; align-items: flex-start; gap: 0.16em; }
+/* SVGs are cropped tight to the ink, so this height maps to the cap height and the lines sit flush-left */
+.hero h1 .ht-line { display: block; width: auto; height: clamp(2.4rem, 8vw, 4.6rem); }
 .vh { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 .hero h1 .em { color: var(--azure); }
 .hero .sub { font-family: var(--sans); font-size: clamp(0.85rem, 2.2vw, 1.05rem); letter-spacing: 2px; color: var(--gules); margin-top: 0.8rem; text-transform: uppercase; font-weight: 600; }
-.hero .tagline { max-width: 46ch; margin-top: 1.6rem; font-size: 1.2rem; color: var(--ink); }
+.hero .tagline { max-width: 46ch; margin-top: 1.4rem; font-size: 1.1rem; color: var(--ink); }
 .hero-actions { margin-top: 2.2rem; display: flex; gap: 1rem; flex-wrap: wrap; }
 
 /* ---------- buttons ---------- */
