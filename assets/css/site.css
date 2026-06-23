@@ -9,6 +9,8 @@
    GULES on ARGENT, the martlets OR, the crowns and dolphin SABLE.
    ============================================================ */
 
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;0,900;1,700&display=swap');
+
 :root {
   /* --- the founding heraldic palette (1961 Charter / 1962 arms) --- */
   --azure:      #0a3d91;         /* the blue of the chevron — primary */
@@ -36,6 +38,7 @@
 
   --sans: "Helvetica Neue", "Univers", "Inter", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
   --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+  --display: "Playfair Display", "Bodoni Moda", "Didot", Georgia, "Times New Roman", serif;
   --mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
   --wrap: 920px;
 }
@@ -207,9 +210,9 @@ section.block { overflow: hidden; }          /* contain floated figures per sect
 .boot { font-family: var(--sans); font-size: 0.74rem; letter-spacing: 3px; color: var(--azure); text-transform: uppercase; margin-bottom: 1.4rem; }
 
 .hero h1 {
-  font-family: var(--sans); font-weight: 800;
-  font-size: clamp(2.6rem, 9vw, 5.6rem); line-height: 0.98;
-  margin: 0; letter-spacing: -1px; color: var(--bright);
+  font-family: var(--display); font-weight: 800;
+  font-size: clamp(2.8rem, 9.2vw, 6rem); line-height: 1.0;
+  margin: 0; letter-spacing: -0.5px; color: var(--bright);
 }
 .hero h1 .em { color: var(--azure); }
 .hero .sub { font-family: var(--sans); font-size: clamp(0.85rem, 2.2vw, 1.05rem); letter-spacing: 2px; color: var(--gules); margin-top: 0.8rem; text-transform: uppercase; font-weight: 600; }
@@ -233,7 +236,7 @@ section.block:last-child { margin-bottom: 0; }
 
 .kicker { font-family: var(--sans); font-weight: 700; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: var(--gules); margin-bottom: 0.9rem; display: block; }
 
-h2 { font-family: var(--sans); font-weight: 700; font-size: clamp(1.5rem, 4vw, 2.1rem); color: var(--bright); letter-spacing: -0.3px; margin: 0 0 1.2rem; }
+h2 { font-family: var(--display); font-weight: 700; font-size: clamp(1.7rem, 4.2vw, 2.4rem); color: var(--bright); letter-spacing: -0.2px; margin: 0 0 1.2rem; }
 h3 { font-family: var(--sans); font-weight: 700; font-size: 1.05rem; color: var(--bright); letter-spacing: 0.2px; margin: 0 0 0.5rem; }
 .lede p { font-size: 1.3rem; line-height: 1.6; color: var(--ink); max-width: 60ch; }
 .content p { max-width: 68ch; }
