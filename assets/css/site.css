@@ -219,7 +219,7 @@ section.block { overflow: hidden; }          /* contain floated figures per sect
    Each SVG carries the font's ascender/descender space, so a negative gap tightens the lines. */
 .hero h1 { margin: 0 0 0.1em; display: flex; flex-direction: column; align-items: flex-start; gap: 0.16em; }
 /* SVGs are cropped tight to the ink, so this height maps to the cap height and the lines sit flush-left */
-.hero h1 .ht-line { display: block; width: auto; height: clamp(2.4rem, 8vw, 4.6rem); }
+.hero h1 .ht-line { display: block; width: auto; height: clamp(2.1rem, 6.8vw, 3.9rem); }
 .vh { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 .hero h1 .em { color: var(--azure); }
 .hero .sub { font-family: var(--sans); font-size: clamp(0.85rem, 2.2vw, 1.05rem); letter-spacing: 2px; color: var(--gules); margin-top: 0.8rem; text-transform: uppercase; font-weight: 600; }
