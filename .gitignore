@@ -1,8 +1,9 @@
 # OS cruft
 .DS_Store
 
-# Large/originals not for the web (handle deliberately, optimise first)
-*.tif
-*.tiff
+# Source/original images are not committed — only optimised web versions are.
+# Keep everything in assets/images/ out of git EXCEPT the web/ subfolder.
+assets/images/*
+!assets/images/web/
 *.docx
 "assets/images/A New Idea of a University/"
