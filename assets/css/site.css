@@ -210,9 +210,11 @@ section.block { overflow: hidden; }          /* contain floated figures per sect
 .hero-inner { position: relative; z-index: 2; padding: 8vh 0; }
 .boot { font-family: var(--sans); font-size: 0.74rem; letter-spacing: 3px; color: var(--azure); text-transform: uppercase; margin-bottom: 1.4rem; }
 
-/* the hero title is set as Perpetua outlines (assets/brand/), so it needs no web font */
-.hero h1 { margin: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 0.02em; }
-.hero h1 .ht-line { display: block; width: auto; height: clamp(2.7rem, 10vw, 6.2rem); }
+/* the hero title is set as Perpetua outlines (assets/brand/), so it needs no web font.
+   Each SVG carries the font's ascender/descender space, so a negative gap tightens the lines. */
+.hero h1 { margin: 0; display: flex; flex-direction: column; align-items: flex-start; }
+.hero h1 .ht-line { display: block; width: auto; height: clamp(2.5rem, 8.6vw, 5.4rem); }
+.hero h1 .ht-line + .ht-line { margin-top: -0.22em; }
 .vh { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 .hero h1 .em { color: var(--azure); }
 .hero .sub { font-family: var(--sans); font-size: clamp(0.85rem, 2.2vw, 1.05rem); letter-spacing: 2px; color: var(--gules); margin-top: 0.8rem; text-transform: uppercase; font-weight: 600; }
