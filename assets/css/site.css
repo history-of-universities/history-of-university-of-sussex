@@ -136,25 +136,34 @@ a:hover { color: var(--gules); }
   .site-nav > .nav-group:last-of-type .nav-menu { left: auto; right: 0; }
 }
 
-/* ---------- hero: a 1964 photograph behind a plate-glass wash ---------- */
+/* ---------- hero: a 1964 photograph, slow Ken Burns, behind a plate-glass wash ---------- */
 .hero {
   position: relative; min-height: 78vh; display: flex; align-items: center;
   overflow: hidden; border-bottom: 1px solid var(--line-soft);
-  background: #d8d6cd url("../images/web/hero-sussex-mind-1964.jpg") center 28% / cover no-repeat;
+  background: #d8d6cd;
 }
-/* a light argent wash, heavier on the left so the headline stays readable,
-   plus the diagonal daylight streak of glass */
+/* the photograph, on its own layer so it can drift and zoom (Ken Burns) */
 .hero::before {
   content: ""; position: absolute; inset: 0; z-index: 0;
-  background:
-    linear-gradient(102deg, rgba(243,241,234,0.95) 0%, rgba(243,241,234,0.82) 34%, rgba(243,241,234,0.42) 66%, rgba(10,61,145,0.16) 100%),
-    /* the diagonal light streak */
-    linear-gradient(118deg, transparent 40%, rgba(255,255,255,0.35) 48%, rgba(255,255,255,0.0) 57%);
+  background: url("../images/web/hero-sussex-mind-1964.jpg") center 28% / cover no-repeat;
+  transform-origin: 62% 42%;
+  animation: kenburns 34s ease-in-out infinite alternate;
+  will-change: transform;
 }
-/* faint plate-glass mullions over the whole thing */
+@keyframes kenburns {
+  from { transform: scale(1.05) translate3d(0, 0, 0); }
+  to   { transform: scale(1.18) translate3d(-2.4%, -1.8%, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero::before { animation: none; transform: scale(1.05); }
+}
+/* argent wash (heavier left, so the headline stays readable), the diagonal
+   glass streak, and the faint plate-glass mullions — all above the photo */
 .hero::after {
   content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
   background:
+    linear-gradient(102deg, rgba(243,241,234,0.95) 0%, rgba(243,241,234,0.82) 34%, rgba(243,241,234,0.42) 66%, rgba(10,61,145,0.16) 100%),
+    linear-gradient(118deg, transparent 40%, rgba(255,255,255,0.35) 48%, rgba(255,255,255,0.0) 57%),
     repeating-linear-gradient(to bottom, transparent 0 7.5rem, var(--line-soft) 7.5rem 7.55rem),
     repeating-linear-gradient(to right, rgba(255,255,255,0.0) 0 6.5rem, var(--line-soft) 6.5rem 6.56rem);
 }
