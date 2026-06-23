@@ -145,7 +145,7 @@ a:hover { color: var(--gules); }
 /* the photograph, on its own layer so it can drift and zoom (Ken Burns) */
 .hero::before {
   content: ""; position: absolute; inset: 0; z-index: 0;
-  background: url("../images/web/hero-sussex-mind-1964.jpg") center 28% / cover no-repeat;
+  background: url("../images/web/hero-sussex-mind-1964.jpg") center bottom / cover no-repeat;
   transform-origin: 62% 42%;
   animation: kenburns 34s ease-in-out infinite alternate;
   will-change: transform;
