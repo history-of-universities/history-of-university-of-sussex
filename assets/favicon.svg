@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="University of Sussex arms">
+  <!-- Argent field -->
+  <path d="M4 4 H28 V17 C28 24 22 28 16 30 C10 28 4 24 4 17 Z" fill="#f3f1ea" stroke="#1a1c20" stroke-width="1.1"/>
+  <!-- Chevron per pale: azure (dexter) and gules (sinister) -->
+  <clipPath id="shield"><path d="M4 4 H28 V17 C28 24 22 28 16 30 C10 28 4 24 4 17 Z"/></clipPath>
+  <g clip-path="url(#shield)">
+    <!-- left half of the chevron, azure -->
+    <path d="M16 11 L4.5 22 L7.5 22 L16 14 Z" fill="#0a3d91"/>
+    <!-- right half of the chevron, gules -->
+    <path d="M16 11 L27.5 22 L24.5 22 L16 14 Z" fill="#b71234"/>
+  </g>
+  <!-- three martlets or, along the chevron -->
+  <g fill="#c2982f">
+    <circle cx="11" cy="18.4" r="1.25"/>
+    <circle cx="16" cy="15.2" r="1.25"/>
+    <circle cx="21" cy="18.4" r="1.25"/>
+  </g>
+</svg>
