@@ -18,8 +18,13 @@
   --azure-soft: rgba(10, 61, 145, 0.08);
   --gules:      #b71234;         /* the red of the chevron — accent */
   --or:         #c2982f;         /* the martlets, gold — highlight */
-  --argent:     #f3f1ea;         /* the field, warm silver-white — page */
+  --argent:     #f5f1e6;         /* the field, warm silver-white — page (warmed toward golden-hour) */
   --sable:      #1a1c20;         /* the crowns and dolphin, near-black — ink */
+
+  /* --- secondary "period Sussex" palette, from the 1960s common-room photograph --- */
+  --teal:       #2f5d59;         /* the petrol-teal curtains */
+  --terracotta: #a85038;         /* the brick */
+  --olive:      #6f7d3c;         /* the chairs */
 
   /* --- working surfaces --- */
   --bg:        var(--argent);
@@ -50,7 +55,7 @@ body {
   margin: 0;
   background:
     /* faint daylight wash from the top */
-    radial-gradient(ellipse 120% 70% at 50% -8%, #ffffff 0%, var(--argent) 55%) fixed;
+    radial-gradient(ellipse 120% 70% at 50% -8%, #fdfaf2 0%, var(--argent) 55%) fixed;
   color: var(--ink);
   font-family: var(--serif);
   font-size: 18px;
@@ -166,7 +171,7 @@ a:hover { color: var(--gules); }
 .hero::after {
   content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none;
   background:
-    linear-gradient(102deg, rgba(243,241,234,0.95) 0%, rgba(243,241,234,0.82) 34%, rgba(243,241,234,0.42) 66%, rgba(10,61,145,0.16) 100%),
+    linear-gradient(102deg, rgba(245,241,230,0.95) 0%, rgba(245,241,230,0.80) 34%, rgba(245,241,230,0.40) 66%, rgba(201,138,60,0.22) 100%),
     linear-gradient(118deg, transparent 40%, rgba(255,255,255,0.35) 48%, rgba(255,255,255,0.0) 57%),
     repeating-linear-gradient(to bottom, transparent 0 7.5rem, var(--line-soft) 7.5rem 7.55rem),
     repeating-linear-gradient(to right, rgba(255,255,255,0.0) 0 6.5rem, var(--line-soft) 6.5rem 6.56rem);
@@ -265,6 +270,8 @@ h3 { font-family: var(--sans); font-weight: 700; font-size: 1.05rem; color: var(
 .card.gu { border-top: 3px solid var(--gules); }
 .card.or { border-top: 3px solid var(--or); }
 .card.sa { border-top: 3px solid var(--sable); }
+.card.te { border-top: 3px solid var(--teal); }
+.card.tc { border-top: 3px solid var(--terracotta); }
 
 /* method list */
 .method { list-style: none; padding: 0; margin: 1.5rem 0 0; display: grid; gap: 1rem; }
