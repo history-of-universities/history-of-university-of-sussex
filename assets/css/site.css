@@ -321,7 +321,7 @@ h3 { font-family: var(--sans); font-weight: 700; font-size: 1.05rem; color: var(
 @media (max-width: 620px) { .contacts { grid-template-columns: 1fr; } }
 
 /* bibliography */
-.bib .ref { font-family: var(--serif); font-size: 0.96rem; line-height: 1.5; padding-left: 1.7rem; text-indent: -1.7rem; margin: 0 0 0.75rem; max-width: 74ch; color: var(--ink); }
+.bib .ref { font-family: var(--serif); font-size: 0.72rem; line-height: 1.35; padding-left: 1.3rem; text-indent: -1.3rem; margin: 0 0 0.4rem; max-width: 80ch; color: var(--ink-dim); }
 .bib h3 { margin-top: 2.2rem; color: var(--azure); }
 .bib .ref a { border-bottom: 1px solid var(--line-soft); word-break: break-word; }
 .bib .ref a:hover { border-bottom-color: var(--gules); }
