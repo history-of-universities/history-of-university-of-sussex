@@ -86,7 +86,7 @@ a:hover { color: var(--gules); }
   display: flex; align-items: center; justify-content: space-between;
   padding: 12px 0; gap: 1rem; position: relative;
 }
-.brand { display: flex; align-items: center; gap: 0.7rem; border: 0 !important; }
+.brand { display: flex; align-items: center; gap: 0.7rem; border: 0; }
 .brand svg { width: 34px; height: 34px; display: block; }
 .brand-block { display: flex; flex-direction: column; align-items: flex-start; gap: 0.18rem; line-height: 1.1; }
 .brand-name { font-family: var(--sans); font-weight: 700; font-size: 0.92rem; letter-spacing: 0.4px; color: var(--bright); }
@@ -272,6 +272,41 @@ h3 { font-family: var(--sans); font-weight: 700; font-size: 1.05rem; color: var(
 .card.sa { border-top: 3px solid var(--sable); }
 .card.te { border-top: 3px solid var(--teal); }
 .card.tc { border-top: 3px solid var(--terracotta); }
+
+/* contents: an editorial index (replaces the home card grid), each entry
+   carrying a coloured spine from the heraldic / period palette */
+.contents { list-style: none; padding: 0; margin: 1.9rem 0 0; }
+.contents li {
+  display: grid; grid-template-columns: 8.5rem 1fr; gap: 0.25rem 1.9rem; align-items: baseline;
+  padding: 1.25rem 0 1.25rem 1.1rem; border-bottom: 1px solid var(--line-soft); border-left: 3px solid transparent;
+}
+.contents li:last-child { border-bottom: 0; }
+.contents .yr { font-family: var(--sans); font-size: 0.66rem; letter-spacing: 1.6px; text-transform: uppercase; color: var(--ink-dim); }
+.contents h3 { font-family: var(--display); font-weight: 600; font-size: 1.42rem; letter-spacing: 0; margin: 0 0 0.25rem; }
+.contents h3 a { border: 0; color: var(--bright); }
+.contents h3 a:hover { color: var(--gules); }
+.contents p { margin: 0; font-size: 1.02rem; color: var(--ink); max-width: 62ch; }
+.contents li.az { border-left-color: var(--azure); }
+.contents li.gu { border-left-color: var(--gules); }
+.contents li.or { border-left-color: var(--or); }
+.contents li.te { border-left-color: var(--teal); }
+.contents li.tc { border-left-color: var(--terracotta); }
+.contents li.sa { border-left-color: var(--sable); }
+@media (max-width: 600px) { .contents li { grid-template-columns: 1fr; padding-left: 0.9rem; } }
+
+/* small folded-in utilities (were inline styles) */
+.more { margin-top: 1.6rem; }
+.source-note { margin-top: 1.8rem; }
+.gallery-head { margin-top: 2rem; }
+.bib .callout { margin-bottom: 2rem; }
+.callout .ref { margin: 0; }
+.callout .ref + .ref { margin-top: 0.6rem; }
+
+/* arms: the blazon lockup and shield */
+.blazon-grid { display: grid; grid-template-columns: 0.7fr 1.3fr; gap: 2.5rem; align-items: center; }
+.blazon-grid .pull { margin-top: 0.6rem; }
+.arms-shield { width: 100%; max-width: 240px; height: auto; filter: drop-shadow(0 8px 24px rgba(10,25,60,0.18)); }
+@media (max-width: 640px) { .blazon-grid { grid-template-columns: 1fr; } }
 
 /* method list */
 .method { list-style: none; padding: 0; margin: 1.5rem 0 0; display: grid; gap: 1rem; }
