@@ -19,28 +19,39 @@
     var lbImg = overlay.querySelector('img');
     var lbCap = overlay.querySelector('.lb-cap');
     var lbClose = overlay.querySelector('.lb-close');
+    var lastTrigger = null;
 
-    function open(src, alt, caption) {
+    function open(src, alt, caption, trigger) {
+      lastTrigger = trigger || null;
       lbImg.src = src;
       lbImg.alt = alt || '';
       lbCap.innerHTML = caption || '';
       lbCap.style.display = caption ? '' : 'none';
       overlay.classList.add('open');
       document.body.style.overflow = 'hidden';
+      lbClose.focus();
     }
     function close() {
       overlay.classList.remove('open');
       document.body.style.overflow = '';
       // release the (possibly large) image after the fade
       setTimeout(function () { if (!overlay.classList.contains('open')) lbImg.src = ''; }, 250);
+      if (lastTrigger) { lastTrigger.focus(); lastTrigger = null; }
     }
 
     Array.prototype.forEach.call(figs, function (img) {
-      img.addEventListener('click', function () {
+      img.tabIndex = 0;
+      img.setAttribute('role', 'button');
+      img.setAttribute('aria-label', 'View larger image' + (img.alt ? ': ' + img.alt : ''));
+      function trigger() {
         var fig = img.closest('figure');
         var cap = fig ? fig.querySelector('figcaption') : null;
         // prefer a full-resolution source if one is given via data-full
-        open(img.getAttribute('data-full') || img.currentSrc || img.src, img.alt, cap ? cap.innerHTML : '');
+        open(img.getAttribute('data-full') || img.currentSrc || img.src, img.alt, cap ? cap.innerHTML : '', img);
+      }
+      img.addEventListener('click', trigger);
+      img.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); trigger(); }
       });
     });
 
@@ -48,7 +59,10 @@
       if (e.target === overlay || e.target === lbImg || e.target === lbClose) close();
     });
     document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape' && overlay.classList.contains('open')) close();
+      if (!overlay.classList.contains('open')) return;
+      if (e.key === 'Escape') { close(); return; }
+      // simple focus trap: only the close button is focusable inside the modal
+      if (e.key === 'Tab') { e.preventDefault(); lbClose.focus(); }
     });
   }
   if (document.readyState !== 'loading') init();

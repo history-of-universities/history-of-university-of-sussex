@@ -49,7 +49,17 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+/* skip link */
+.skip-link {
+  position: absolute; left: -9999px; top: 0; z-index: 10001;
+  background: var(--azure); color: #fff; padding: 0.8rem 1.2rem;
+  font-family: var(--sans); font-size: 0.85rem; letter-spacing: 0.5px; border-radius: 0 0 4px 0;
+}
+.skip-link:focus { left: 0; }
 
 body {
   margin: 0;
@@ -119,6 +129,7 @@ a:hover { color: var(--gules); }
   display: flex; align-items: center; justify-content: space-between; gap: 0.4rem; width: 100%;
 }
 .nav-top:hover, .nav-top:focus-visible { color: var(--azure); background: var(--azure-soft); outline: none; }
+.nav-menu a[aria-current="page"], .nav-top.nav-direct[aria-current="page"] { color: var(--azure); font-weight: 700; }
 .nav-top .caret { font-size: 0.7em; opacity: 0.7; transition: transform 0.15s ease; }
 .nav-top[aria-expanded="true"] .caret { transform: rotate(180deg); }
 .nav-menu { display: none; flex-direction: column; background: var(--azure-soft); }
@@ -302,6 +313,12 @@ h3 { font-family: var(--sans); font-weight: 700; font-size: 1.05rem; color: var(
 .callout .ref { margin: 0; }
 .callout .ref + .ref { margin-top: 0.6rem; }
 
+/* tinctures list (Arms page) */
+.tinctures { margin: 1.5rem 0 0; }
+.tinctures dt { font-family: var(--sans); font-weight: 700; font-size: 0.95rem; color: var(--bright); margin-top: 1rem; }
+.tinctures dt:first-child { margin-top: 0; }
+.tinctures dd { margin: 0.3rem 0 0; font-size: 0.98rem; color: var(--ink); max-width: 62ch; }
+
 /* arms: the blazon lockup and shield */
 .blazon-grid { display: grid; grid-template-columns: 0.7fr 1.3fr; gap: 2.5rem; align-items: center; }
 .blazon-grid .pull { margin-top: 0.6rem; }
@@ -372,6 +389,12 @@ h3 { font-family: var(--sans); font-weight: 700; font-size: 1.05rem; color: var(
 .bib h3 { margin-top: 2.2rem; color: var(--azure); }
 .bib .ref a { border-bottom: 1px solid var(--line-soft); word-break: break-word; }
 .bib .ref a:hover { border-bottom-color: var(--gules); }
+
+/* chapter nav: next/previous link between the narrative pages */
+.chapter-nav { display: flex; justify-content: flex-end; margin-top: 3.5rem; padding-top: 1.6rem; border-top: 1px solid var(--line-soft); }
+.chapter-nav a { font-family: var(--sans); font-size: 0.85rem; font-weight: 700; letter-spacing: 0.5px; border: 0; color: var(--azure); }
+.chapter-nav a:hover { color: var(--gules); }
+.chapter-nav .lbl { display: block; font-size: 0.64rem; font-weight: 400; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink-dim); margin-bottom: 0.2rem; }
 
 /* footer */
 .site-footer { border-top: 1px solid var(--line-soft); padding: 1.4rem 0; margin-top: 2.5rem; font-family: var(--sans); font-size: 0.78rem; color: var(--ink-dim); letter-spacing: 0.3px; }

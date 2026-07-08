@@ -1,4 +1,4 @@
-// Nav for the SHRDLU site: hamburger panel (mobile) + click-to-open dropdown groups.
+// Nav for the Sussex history site: hamburger panel (mobile) + click-to-open dropdown groups.
 (function () {
   function init() {
     var toggle = document.querySelector('.nav-toggle');
